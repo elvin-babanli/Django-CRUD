@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}Data{% endblock %}
+{% block content %}
+<table class="table table-striped align-middle">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Surname</th>
+            <th>Email</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in data %}
+        <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ p.name }}</td>
+            <td>{{ p.surname }}</td>
+            <td>{{ p.email }}</td>
+            <td class="d-flex gap-2">
+                <!-- Edit artıq index-ə yönləndirir və formu doldurulmuş göstərir -->
+                <a href="/?edit={{ p.id }}" class="btn btn-sm btn-warning">Edit</a>
+                <a href="/delete/{{ p.id }}/" class="btn btn-sm btn-danger">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

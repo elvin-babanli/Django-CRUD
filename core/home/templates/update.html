@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Update{% endblock %}
+{% block content %}
+<form method="post" class="card p-3 shadow-sm">
+    {% csrf_token %}
+    <div class="mb-3">
+        <input class="form-control" name="name" value="{{ data.name }}" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" name="surname" value="{{ data.surname }}" required>
+    </div>
+    <div class="mb-3">
+        <input class="form-control" type="email" name="email" value="{{ data.email }}" required>
+    </div>
+    <button class="btn btn-primary" type="submit">Save</button>
+</form>
+{% endblock %}
