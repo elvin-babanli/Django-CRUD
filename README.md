@@ -27,7 +27,7 @@ This project is part of my recruitment portfolio and is designed to demonstrate 
 ![Home Page](screenshots/home.png)
 
 ## Edit page
-![Edit Page](screenshots/edit.png)
+![Edit Page](screenshots/update.png)
 
 ## Data page
 ![Data Page](screenshots/data.png)
