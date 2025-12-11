@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Person
 
+
 def index(request):
     edit_id = request.GET.get('edit')
     if request.method == 'GET' and edit_id:
         obj = get_object_or_404(Person, id=edit_id)
         return render(request, 'index.html', {'person': obj, 'is_edit': True})
+
     
     if request.method == 'POST':
         person_id = request.POST.get('person_id')
@@ -25,6 +27,7 @@ def index(request):
             return redirect('/')
 
     return render(request, 'index.html')
+
 
 def get_data(request):
     people = Person.objects.all()
